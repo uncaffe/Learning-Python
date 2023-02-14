@@ -1,5 +1,5 @@
 """
-Plik z ćwiczeniami do książki pt. "Python- wprowadzenie"
+Exercises for the book "Learning Python, 5th Edition" by Mark Lutz.
 """
 
 """
@@ -7,7 +7,7 @@ Plik z ćwiczeniami do książki pt. "Python- wprowadzenie"
 """
 
 # a)
-S = 'mielonka'
+S = 'spam'
 for i in S: print(ord(i))
 
 # b).1
@@ -58,26 +58,26 @@ X = 5
 i = 0
 while i < len(L):
     if (2 ** X) == L[i]:
-        print((2 ** X), 'odnaleziono pod indeksem', i)
+        print((2 ** X), 'found at position', i)
         break
     i = i+1
 else:       
-    print((2 ** X), 'nie odnaleziono')
+    print((2 ** X), 'not found')
 
 # b)
 for j in L:
     if (2 ** X) == j:
-        print((2 ** X), 'odnaleziono pod indeksem', L.index(j))
+        print((2 ** X), 'found at position', L.index(j))
         break
 else:       
-    print((2 ** X), 'nie odnaleziono')
+    print((2 ** X), 'not found')
 
 # c)
 Z = 2 ** X
 if Z in L:
-    print(Z, 'odnaleziono pod indeksem', L.index(Z))
+    print(Z, 'found at position', L.index(Z))
 else:       
-    print((Z), 'nie odnaleziono')
+    print((Z), 'not found')
 
 # d).1
 y = 0
