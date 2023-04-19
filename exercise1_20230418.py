@@ -363,8 +363,7 @@ for test in (f1, f2, f3, f4, f5, f6):
 ''' 1. '''
 
 def countlines(name):
-    x = len(open(name).readlines())
-    return x
+    return len(open(name).readlines())
 
 def forcountlines(name):
     x = 0
@@ -373,8 +372,7 @@ def forcountlines(name):
     return x
 
 def countchars(name):
-    x = len(open(name).read())
-    return x
+    return len(open(name).read())
 
 def forcountchars(name):
     x = 0
@@ -382,13 +380,5 @@ def forcountchars(name):
         x += 1
     return x
 
-
-def test():
-    if __name__ == '__main__':
-        print(countlines("mymod.py"))
-        print(forcountlines("mymod.py"))
-        print(countchars("mymod.py"))
-        print(forcountchars("mymod.py"))
-
-test()
-
+def test(name):
+    return countlines(name), countchars(name)
