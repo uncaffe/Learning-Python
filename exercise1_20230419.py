@@ -21,8 +21,7 @@ for i in S:
     list1.append(ord(i))
 print(list1)
 
-list1 = []                      # c).2
-print(list(map(ord, S)))
+print(list(map(ord, S)))        # c).2
 
 print([ord(i) for i in S])      # c).3
 
@@ -39,7 +38,7 @@ for i in sorted(dict1):                     # 3.2
 
 ''' 4. '''
 
-L = [1, 2, 4, 8, 16, 32, 64]                    # a)
+L = [1, 2, 4, 8, 16, 32, 64]                # a)
 X = 5
 
 i = 0
@@ -51,7 +50,7 @@ while i < len(L):
 else:       
     print((2 ** X), 'not found')
 
-for j in L:                                     # b)
+for j in L:                                # b)
     if (2 ** X) == j:
         print((2 ** X), 'found at position', L.index(j))
         break
@@ -119,6 +118,8 @@ print(l, m, n)                          # result: 1 ['x'] {'a': 'y'}'
 
 print('\n')
 
+''' Modyfication of sumtree.py example from page 603 with print function inside while loop for tracking of each step '''
+
 def sumtree(L):
     tot = 0
     items = list(L)
@@ -134,19 +135,6 @@ def sumtree(L):
 print(sumtree([1, [2, [3, 4], 5], 6]))
 print('\n')
 print(sumtree([[[[[1], 2], 3], 4], 5]))
-
-print('-' * 50)
-
-def knights():
-    title = 'sir'
-    action = (lambda x: title + ' ' + x)
-    
-    return action
-
-act = knights()
-msg = act('robin')
-print(msg)
-print(act)
 
 """ Chapter 21 """
 
@@ -195,6 +183,8 @@ print(copyDict(D1))
 
 D2 = D1.copy()              # 5.2
 print(D2)
+
+''' 6. '''
 
 def addDict(d1, d2):        # 6.1
     new = {}
