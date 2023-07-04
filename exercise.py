@@ -372,3 +372,84 @@ def forcountchars(name):
 
 def test(name):
     return countlines(name), countchars(name)
+
+""" Chapter 32 """
+
+''' 1. '''
+
+class Adder:
+    def __init__(self, start=[]):
+        self.data = start
+    def __add__(self, other):
+        return ('Not implemented')
+
+class ListAdder(Adder):
+    def __add__(self, x):
+        return self.data + x
+
+class DictAdder(Adder): 
+    def __add__(self, x):
+        new = {}
+        for k in self.data.keys(): new[k] = self.data[k]
+        for k in x.keys(): new[k] = x[k]
+        return new
+
+class DictAdder2(Adder):
+    def __init__(self, start={}):
+        self.data = start    
+    def __add__(self, x):
+        y = self.data.copy()
+        y.update(x)
+        return y
+
+''' 2. '''
+
+class MyList:
+    def __init__(self, start):
+        self.wrapped = list(start)
+        
+    def __add__(self, other):
+        return MyList(self.wrapped + other)
+    
+    def __mul__(self, time):
+        return MyList(self.wrapped * time)
+
+    def __radd__(self, other):
+        return other + self.data
+
+    def __getitem__(self, offset):
+        return self.wrapped[offset]
+
+    def __len__(self):
+        return len(self.wrapped)
+
+    def __getslice__(self, low, high):
+        return MyList(self.wrapped[low:high])
+
+    def __getattr__(self, name):
+        return getattr(self.wrapped, name)
+
+    def __repr__(self):
+        return repr(self.wrapped)
+
+    def __append__(self, other):
+        return self.wrapped.append(other)
+
+    def __contains__(self, element):
+        if element in self.wrapped: return True
+        else: return False
+
+    def __reversed__(self):
+        return reversed(self.wrapped)
+
+    def __iter__(self):
+        self.offset = 0
+        return self
+
+    def __next__(self):
+        if self.offset >= len(self.wrapped):
+            raise StopIteration
+        else:
+            item = self.wrapped[self.offset]
+            self.offset += 1
+            return item
