@@ -4,7 +4,7 @@ Exercises from the book "Learning Python, 5th Edition" by Mark Lutz.
 
 """ Chapter 32 """
 
-''' 7. '''
+''' 8. '''
 
 class Animal:
     def speak(self):
