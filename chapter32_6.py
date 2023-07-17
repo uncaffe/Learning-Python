@@ -1,3 +1,10 @@
+"""
+Exercises from the book "Learning Python, 5th Edition" by Mark Lutz.
+"""
+
+""" Chapter 32 """
+'''  6. '''
+
 class ListInstance:
     """
     Mix-in class that provides a formatted print() or str() of instances via 
